@@ -10,7 +10,10 @@ uploaded_file = st.file_uploader("Choose a file", type=["xlsx", "xls"])
 
 if uploaded_file is not None:
     value_dict, new_df = utils.excel_helper(uploaded_file)
-    new_df
+    try:
+        new_df
+    except Exception as e:
+        f"Can't display the data because: {e}"
     #value_dict
 
     split_name, _ = uploaded_file.name.split(".")
