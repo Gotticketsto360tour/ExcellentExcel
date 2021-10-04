@@ -23,7 +23,7 @@ def check_if_in_dict(value, dictionary):
     if value in dictionary.values():
         return check_if_in_dict(str(value) + "_1", dictionary)
     else:
-        return value
+        return str(value)
 
 
 def fill_rename_dict(x, dictionary):
