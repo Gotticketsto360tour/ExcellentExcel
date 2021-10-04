@@ -19,7 +19,7 @@ if uploaded_file is not None:
     split_name, _ = uploaded_file.name.split(".")
 
     user_input = st.text_input(
-        "What should your downloaded file be called? (DON'T WRITE '.csv')",
+        "What should your downloaded file be called? (DON'T WRITE '.xlsx')",
         split_name + "_excellent",
     )
 
@@ -28,7 +28,7 @@ if uploaded_file is not None:
     downloaded_file = new_df.to_excel(towrite, encoding='utf-8', index=False, header=True)
     towrite.seek(0)  # reset pointer
     b64 = base64.b64encode(towrite.read()).decode()  # some strings
-    linko= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="myfilename.xlsx">Download excel file</a>'
+    linko= f'<a href="data:application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;base64,{b64}" download="{final_name}.xlsx">Download excel file</a>'
     st.markdown(linko, unsafe_allow_html=True)
 
     # csv = new_df.to_csv(index=False)
