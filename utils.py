@@ -92,11 +92,16 @@ def use_dict(x, value_dict, value):
         return x
 
 
-def excel_helper(path_to_excel):
+def get_sheets_from_excel(path_to_excel):
+    xls = pd.ExcelFile(path_to_excel)
+    return xls.sheet_names
+
+
+def excel_helper(path_to_excel, language):
     xls = pd.ExcelFile(path_to_excel)
     # split into two different dataframes
-    df1 = pd.read_excel(xls, 0)
-    df2 = pd.read_excel(xls, 1)
+    df1 = pd.read_excel(xls, language)
+    df2 = pd.read_excel(xls, "Data")
 
     # FIRST: We want to rename df2 on the basis of the values of
     # the two first columns in df1
