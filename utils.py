@@ -21,7 +21,7 @@ def check_if_in_dict(value, dictionary):
         [str]: value of column name
     """
     if value in dictionary.values():
-        return check_if_in_dict(value + "_1", dictionary)
+        return check_if_in_dict(str(value) + "_1", dictionary)
     else:
         return value
 
