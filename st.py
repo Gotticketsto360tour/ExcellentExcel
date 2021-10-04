@@ -9,8 +9,9 @@ import base64
 uploaded_file = st.file_uploader("Choose a file", type=["xlsx", "xls"])
 
 if uploaded_file is not None:
-    new_df = utils.excel_helper(uploaded_file)
+    value_dict, new_df = utils.excel_helper(uploaded_file)
     new_df
+    value_dict
 
     split_name, _ = uploaded_file.name.split(".")
 

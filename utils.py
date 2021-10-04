@@ -132,7 +132,7 @@ def excel_helper(path_to_excel):
                 print(f"Ups! Something went wrong at the column named {value}")
                 print(f"Contact Mikkel and tell him the following went wrong: {e}")
 
-    return df2
+    return value_dict, df2
 
 
 if __name__ == "__main__":
