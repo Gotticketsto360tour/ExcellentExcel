@@ -6,6 +6,11 @@ import io
 
 "# Excellent Excel"
 
+# TODO: Currently the app is hosted on Github on Mikkel Werling's personal account.
+#      We want to migrate this application to AWS or at least Github.
+#      Streamlit has just improved their availabilities, so it might be possible.
+#      Good luck! If something breaks, contact Mikkel Werling
+
 uploaded_file = st.file_uploader("Choose a file", type=["xlsx", "xls"])
 
 if uploaded_file is not None:
